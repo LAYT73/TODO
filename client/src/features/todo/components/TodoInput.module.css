@@ -1,0 +1,24 @@
+.add_button {
+    min-width: 40px;
+    min-height: 40px;
+    background-color: #9E78CF;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+}
+
+.add_button:hover {
+    background-color: #b487ee;
+    transform: scale(1.1);
+}
+
+.todo_input {
+    display: flex;
+    align-items: center;
+}

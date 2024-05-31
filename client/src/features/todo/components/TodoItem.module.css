@@ -1,0 +1,26 @@
+.todo_item {
+    margin-top: 16px;
+    width: 100%;
+    background-color: #15101C;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.todo_item span {
+    font-size: 16px;
+}
+
+.todo_item_title_completed {
+    color: #9E78CF;
+}
+
+.todo_item_title_done {
+    color: #78CFB0;
+}
+
+.todo_item__buttons {
+    display: flex;
+}
