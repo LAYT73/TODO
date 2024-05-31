@@ -3,3 +3,8 @@
     font-size: 16px;
     font-weight: 300;
 }
+
+.todo_list {
+    max-height: 40vh;
+    overflow-y: auto;
+}

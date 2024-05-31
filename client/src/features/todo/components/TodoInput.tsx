@@ -6,6 +6,7 @@ import styles from './TodoInput.module.css';
 import Image from 'next/image';
 const TodoInput: React.FC = () => {
   const [task, setTask] = useState('');
+  const [isNotEmpty, setIsNotEmpty] = useState(true);
   const { addTodo } = useTodos();
 
   const handleAdd = () => {

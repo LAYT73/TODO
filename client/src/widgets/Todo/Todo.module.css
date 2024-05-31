@@ -5,3 +5,15 @@
     padding: 50px 65px;
     border-radius: 20px;
 }
+
+@media (max-width: 1600px) {
+    .todo {
+        width: 50vw;
+    }
+}
+
+@media (max-width: 1000px) {
+    .todo {
+        width: 80vw;
+    }
+}
