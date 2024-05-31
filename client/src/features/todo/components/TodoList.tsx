@@ -9,13 +9,17 @@ const TodoList: React.FC = () => {
   return (
     <div>
       <h4 className={styles.todo_title}>Tasks to do - {todos.filter(todo => !todo.completed).length}</h4>
-      {todos.filter(todo => !todo.completed).map(todo => (
-        <TodoItem key={todo.id} todo={todo} />
-      ))}
+      <div className={styles.todo_list}>
+        {todos.filter(todo => !todo.completed).map(todo => (
+          <TodoItem key={todo.id} todo={todo} />
+        ))}
+      </div>
       <h4 className={styles.todo_title}>Done - {todos.filter(todo => todo.completed).length}</h4>
-      {todos.filter(todo => todo.completed).map(todo => (
-        <TodoItem key={todo.id} todo={todo} />
-      ))}
+      <div className={styles.todo_list}>
+        {todos.filter(todo => todo.completed).map(todo => (
+          <TodoItem key={todo.id} todo={todo} />
+        ))}
+      </div>
     </div>
   );
 };

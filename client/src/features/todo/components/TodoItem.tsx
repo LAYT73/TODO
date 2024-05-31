@@ -2,6 +2,9 @@ import React from 'react';
 import { Todo } from '../types/todoTypes';
 import { useTodos } from '../model/useTodos';
 import styles from './TodoItem.module.css';
+import Image from 'next/image';
+import TrashBucket from '@/assets/TrashSimple.svg';
+import Check from '@/assets/Check.svg';
 
 interface TodoItemProps {
   todo: Todo;
@@ -18,11 +21,18 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo }) => {
       >
         {todo.text}
       </span>
-      <div>
-        <button onClick={() => toggleTodo(todo.id)}>
-          {todo.completed ? 'Undo' : 'Complete'}
+      <div className={styles.todo_item__buttons}>
+        {
+          !todo.completed ? 
+          <button onClick={() => toggleTodo(todo.id)}>
+            <Image src={Check} alt=''/>
+          </button>
+          :
+          <></>
+        }
+        <button onClick={() => deleteTodo(todo.id)}>
+          <Image src={TrashBucket} alt=''/>
         </button>
-        <button onClick={() => deleteTodo(todo.id)}>Delete</button>
       </div>
     </div>
   );
