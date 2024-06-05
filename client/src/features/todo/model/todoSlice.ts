@@ -1,11 +1,24 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Todo } from '../types/todoTypes';
 
-interface TodoState {
+const loadState = () => {
+  try {
+    const serializedState = localStorage.getItem('todos');
+    if (serializedState === null) {
+      return undefined;
+    }
+    return JSON.parse(serializedState);
+  } catch (err) {
+    console.error('Could not load state', err);
+    return undefined;
+  }
+};
+
+export interface TodoState {
   todos: Todo[];
 }
 
-const initialState: TodoState = {
+const initialState: TodoState = loadState() || {
   todos: [],
 };
 

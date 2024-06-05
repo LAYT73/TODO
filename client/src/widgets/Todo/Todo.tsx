@@ -1,8 +1,10 @@
 'use client';
 import TodoInput from '@/features/todo/components/TodoInput';
-import TodoList from '@/features/todo/components/TodoList';
 import React from 'react';
 import styles from './Todo.module.css';
+import dynamic from 'next/dynamic';
+
+const TodoList = dynamic(() => import('@/features/todo/components/TodoList'), { ssr: false })
 
 const Todo: React.FC = () => {
   return (

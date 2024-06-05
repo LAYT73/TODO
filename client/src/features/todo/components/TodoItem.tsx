@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import { Todo } from '../types/todoTypes';
 import { useTodos } from '../model/useTodos';
