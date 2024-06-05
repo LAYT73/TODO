@@ -22,3 +22,11 @@
     display: flex;
     align-items: center;
 }
+
+.empty {
+    margin: 0;
+    text-align: center;
+    margin-bottom: 8px;
+    font-weight: 300;
+    color: #ee8787;
+}

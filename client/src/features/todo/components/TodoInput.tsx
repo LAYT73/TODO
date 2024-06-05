@@ -17,19 +17,25 @@ const TodoInput: React.FC = () => {
         completed: false,
       });
       setTask('');
+      setIsNotEmpty(true);
+    } else {
+      setIsNotEmpty(false);
     }
   };
 
   return (
-    <div className={styles.todo_input}>
-      <Input
-        value={task}
-        onChange={(e) => setTask(e.target.value)}
-        placeholder="Add a new task"
-      />
-      <button className={styles.add_button} onClick={handleAdd}>
-        <Image src={Plus} alt="Picture of the author"></Image>
-      </button>
+    <div>
+      { !isNotEmpty && <h5 className={styles.empty}>Input is empty</h5> }
+      <div className={styles.todo_input}>
+        <Input
+          value={task}
+          onChange={(e) => setTask(e.target.value)}
+          placeholder="Add a new task"
+          />
+        <button className={styles.add_button} onClick={handleAdd}>
+          <Image src={Plus} alt="Picture of the author"></Image>
+        </button>
+      </div>
     </div>
   );
 };
